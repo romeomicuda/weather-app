@@ -1,26 +1,27 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import { Nav } from "react-bootstrap";
 
 export const Layout = () => {
   return (
     <>
-    <nav>
-      <ul>
-        <li>
-            <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/forecast">Forecast</Link>
-        </li>
-        <li>
-          <Link to="line-chart">Line Chart</Link>
-        </li>
-        <li>
-          <Link to="heat-index-calculator">Heat Index Calculator</Link>
-        </li>
-      </ul>
-    </nav>
-    <Outlet />
+      <Nav defaultActiveKey="" as="ul">
+        <Nav.Item as="li">
+          <Nav.Link href="/">Home</Nav.Link>
+        </Nav.Item>
+        <Nav.Item as="li">
+          <Nav.Link href="forecast">Forecast</Nav.Link>
+        </Nav.Item>
+        <Nav.Item as="li">
+          <Nav.Link href="line-chart">Line Chart</Nav.Link>
+        </Nav.Item>
+        <Nav.Item as="li">
+          <Nav.Link href="heat-index-calculator">
+            Heat Index Calculator
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
+      <Outlet />
     </>
   );
 };
